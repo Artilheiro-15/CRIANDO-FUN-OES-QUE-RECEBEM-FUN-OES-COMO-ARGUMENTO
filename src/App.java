@@ -7,6 +7,7 @@ import model.services.ProductService;
 public class App {
 
   public static void main(String[] args) throws Exception {
+    //E assim que agente implementa uma funçao que recebe outra funçao lambida como argumento
     System.out.println("===================================");
     Locale.setDefault(Locale.US);
     List<Product> list = new ArrayList<>();
@@ -18,7 +19,7 @@ public class App {
 
     ProductService ps = new ProductService();
 
-    double sum = ps.filteredSum(list);
+    double sum = ps.filteredSum(list, p -> p.getPrice() < 100);
 
     System.out.println("Sum = " + String.format("%.2f", sum));
 
